@@ -163,7 +163,7 @@ public class ViewModelPackage : ViewModelBase
     {
         get
         {
-            List<byte> byteList = Data.Select(i => i.ToByte).ToList();
+            List<byte> byteList = Data.Take(MainPacketBytes).Select(i => i.ToByte).ToList();
             if (isMainPacket)
             {
                 byteList.Insert(0, 0xA);
